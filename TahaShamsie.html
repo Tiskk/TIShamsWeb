@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Taha Shamsie Portfolio </title>
+        <meta charset="utf-8">
+        <meta name="author" content="Taha Shamsie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                font-family:Helvetica, sans-serif;
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+                scrollbar-width: none;
+            }
+            body::-webkit-scrollbar{
+                display: none;
+            }
+            nav {
+                position:sticky;
+                position:-webkit-sticky;
+                top:0;
+                width:100%;
+                height: 85px;
+                text-align:center;
+                box-sizing: border-box;
+                background: #282528;
+                /*background: linear-gradient(153deg, rgb(40, 41, 46) 0%, rgb(67, 57, 68) 52%, rgb(96, 95, 89) 100%);*/
+                /*color:rgb(44, 37, 37)*/
+                color:rgb(236, 222, 222);
+                align-self: flex-start;
+            }
+
+            nav li{
+                display:block;
+                flex:0 1 auto;
+                list-style-type: disc;
+            }
+            
+            nav ul{
+                overflow: auto;
+                display:flex;
+                align-items: stretch;
+                justify-content: space-evenly;
+                width: 100%;
+                margin:0;
+                padding:0;
+            }
+            
+            nav a{
+                /*color:#282528;*/
+                color:rgb(236, 222, 222);
+                text-transform:none;
+                text-decoration:none;
+                font-size: 15px;
+                font-weight:bolder;
+            }
+            nav a:hover{
+                transition:.6s;
+                text-decoration:overline;
+                color:rgb(175, 178, 244);
+            }
+             nav .activeB{
+                padding:3px;
+                text-decoration:underline;
+            }
+            .header1{
+                text-align:center;
+                color: white;
+                border-bottom: 20px white;
+            }
+            .header1:after {
+                content:'              ';
+                display:block;
+                border:2px solid #d0d0d0;
+                border-radius:4px;
+                -webkit-border-radius:4px;
+                -moz-border-radius:4px;
+                box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+                -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+                -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+            }
+            .header2{
+                text-align:center;
+                color: black;
+                padding-top:7%;
+            }
+            .intro{
+                background: #282528;
+                background: linear-gradient(153deg, rgb(40, 41, 46) 0%, rgb(67, 57, 68) 52%, rgb(96, 95, 89) 100%);
+                color: white;
+                min-height: 0px;
+                height: 100%;
+                width: 100%;
+                background-size:cover;
+            }
+            .centerScreen{
+                position:absolute;
+                top:30%;
+                left:50%;
+                transform:translate(-50%, -50%);
+            }
+            .aboutMe{
+                position:absolute;
+                text-align: center;
+                top:43%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            .titleHeader{
+                text-align:center;
+                margin:0;
+                margin-bottom:20px;
+            }
+            .elementDiv{
+                background-color:white;
+            }
+            .showMore{
+                height: 25px;
+                width: 100%;
+                text-align:center;
+            }
+            .clickOn{
+                border-radius:15px;
+                background-color: rgb(230, 230, 230);
+                color: black;
+                cursor: pointer;
+                padding: 18px;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.5s;
+                margin:0;
+            }
+            .active, .clickOn:hover{
+                background-color: rgb(178, 178, 178);
+            }
+            .clickOn:after {
+                content: '▼';
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+            .active:after {
+                content: '▲';
+            }
+            #Mechanical{
+                text-align: left;
+            }
+            #Coding{
+                text-align: center;
+            }
+            #Mechatronics{
+                text-align: center;
+            }
+            #About-Me{
+                margin:0;
+                padding:0;
+                height:100%;
+                width:100%;
+                scrollbar-width: none;
+                background:#282528;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('.clickOn').on('click', function(){
+                    this.classList.toggle('active');
+                    if($(this).next('.showMore').length){
+                        var show_m = $(this).next('.showMore');
+                    }
+                    else{
+                        var show_m = $(this).parent.next('.showMore')
+                    }
+                    $('.showMore').not(show_m).slideUp('fast');
+                    show_m.slideToggle('fast');
+                })
+            })
+            
+        </script>
+    </head>
+
+    <body>
+        <section id="About-Me">
+            <div class="intro">
+                <div class="centerScreen">
+                    <h1 class="header1">    Taha Iqbal Shamsie    </h1>
+                </div>
+                <div class="aboutMe">
+                    <p>My name is Taha Shamsie and I am currently a fourth year Mechanical Engineering major at the University of Virginia. 
+                    I specialize in Mechatronic systems and am intrigued with the intersection
+                    between Mechanical Engineering, Electrical and Computer Engineering, and Computer Science. Within this portfolio,
+                    I hope to showcase and display the numerous projects that I have taken on over the years.
+                    </p>
+                </div>
+            </div>
+        </section> 
+
+        <div class="elementDiv">
+            <nav> 
+                <h1 class="titleHeader">Projects</h1>
+                <ul>
+                <li>
+                    <a href="#About-Me" class="activeA">About Me</a>
+                </li>
+                <li>
+                    <a href="#Mechanical">Mechanical</a>
+                </li>
+                <li>
+                    <a href="#Coding">Coding</a>
+                </li>
+                <li>
+                    <a href="#Mechatronics">Mechatronics</a>
+                </li>
+                </ul>
+            </nav>
+            <section id="Mechanical">
+                <h1 class="header2">Mechanical Designs and Projects</h1>
+                <div class="clickOn"><b>Mechatronics and Robotics Society Lunabotic CAD</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>text</p>
+                    <p>Hroehfdshg dkghsdkhgj</p>
+                </div>
+                <p>Hellow</p>
+                <p>Hellow</p>
+                <p>Hellow</p>
+                <p>Hellow</p>
+                <p>Hellow</p>
+                <p>Hellow</p>
+                <p>Hellow</p>
+
+            </section>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <section id="Coding">
+                <h2 class="header2">Coding Projects and Simulations<h2>
+            </section>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <section id="Mechatronics">
+                <h2 class="header2">Mechatronic Projects<h2>
+            </section>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+            <p>Hellow</p>
+        </div>
+        <script>
+            $(window).on("scroll", function() {
+            var currentPos = $(window).scrollTop();
+
+            $('nav a').each(function() {
+                var sectionLink = $(this);
+                // capture the height of the navbar
+                var navHeight = $('nav').outerHeight() + 1;
+                console.log(navHeight)
+                var section = $(sectionLink.attr('href'));
+
+                // subtract the navbar height from the top of the section
+                if(section.position().top - navHeight  <= currentPos && sectionLink.offset().top + section.height()> currentPos) {
+                $('nav li').removeClass('activeB');
+                sectionLink.parent().addClass('activeB');
+                } else {
+                sectionLink.parent().removeClass('activeB');
+                }
+            });        
+        });
+        </script>
+    </body>
+
+          
