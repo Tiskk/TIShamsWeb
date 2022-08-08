@@ -72,6 +72,7 @@
             }
             .header1{
                 text-align:center;
+                line-height:
                 color: white;
                 border-bottom: 20px white;
             }
@@ -95,10 +96,8 @@
                 background: #282528;
                 background: linear-gradient(153deg, rgb(40, 41, 46) 0%, rgb(67, 57, 68) 52%, rgb(96, 95, 89) 100%);
                 color: white;
-                min-height: 0px;
                 height: 100%;
                 width: 100%;
-                background-size:cover;
             }
             .centerScreen{
                 position:absolute;
@@ -109,6 +108,7 @@
             .aboutMe{
                 position:absolute;
                 text-align: center;
+                min-width:800px;
                 top:43%;
                 left:50%;
                 transform:translate(-50%,-50%);
@@ -301,7 +301,6 @@
                 var sectionLink = $(this);
                 // capture the height of the navbar
                 var navHeight = $('nav').outerHeight() + 1;
-                console.log(navHeight)
                 var section = $(sectionLink.attr('href'));
 
                 // subtract the navbar height from the top of the section
