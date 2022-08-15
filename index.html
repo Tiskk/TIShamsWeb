@@ -66,6 +66,21 @@
                 text-decoration:overline;
                 color:rgb(175, 178, 244);
             }
+            nav .dropdown{
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
              nav .activeB{
                 padding:3px;
                 text-decoration:underline;
@@ -122,9 +137,11 @@
                 background-color:white;
             }
             .showMore{
-                height: 25px;
-                width: 100%;
+                min-height: 25px;
+                overflow: hidden;
                 text-align:center;
+                padding: 55px;
+                
             }
             .clickOn{
                 border-radius:15px;
@@ -172,7 +189,7 @@
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-            $(function(){
+          /*  $(function(){
                 $('.clickOn').on('click', function(){
                     this.classList.toggle('active');
                     if($(this).next('.showMore').length){
@@ -185,7 +202,7 @@
                     show_m.slideToggle('fast');
                 })
             })
-            
+            */
         </script>
     </head>
 
@@ -210,7 +227,7 @@
                 <h1 class="titleHeader">Projects</h1>
                 <ul>
                 <li>
-                    <a href="#About-Me" class="activeA">About Me</a>
+                    <a href="#About-Me">About Me</a>
                 </li>
                 <li>
                     <a href="#Mechanical">Mechanical</a>
@@ -225,74 +242,201 @@
             </nav>
             <section id="Mechanical">
                 <h1 class="header2">Mechanical Designs and Projects</h1>
-                <div class="clickOn"><b>Mechatronics and Robotics Society Lunabotic CAD</b></div>
+                <div class="clickOn"><b>Mechatronics and Robotics Society Lunabotics CAD</b></div>
                 <div class="showMore" style="display:none;">
-                    <p>text</p>
-                    <p>Hroehfdshg dkghsdkhgj</p>
+                    <h2></h2>
+                    <img src = "C:\Users\tahas\Desktop\images\finalRobDesign.jpg" alt = "Robot Design" width="460" height="345">
+                    <p>The above image depicts the CAD model that was developed when designing the robot.
+                        Being the Mechanical Lead, I was in charge of developing and assembling the major components of the CAD,
+                        such as the bucket ladder, the conveyor belt, and the deposit basket, while integrating the
+                        delegated CAD designs from mechanical team members into the overall design. The use of a design/decision matrix was
+                        used to determine the best design choices for the given robot.
+                    </p>
+                    <p>
+                        I was also in charge of running the finite element analysis (FEA) of the major components of the robot in order to 
+                        determine modes of failure. Failure modes included; bending, shear, buckling, and general cyclic fatigue.
+                        To do this, I utilized SolidWorks FEA and AutoDesk Inventor FEA. For basic components, rough hand calculations
+                        were done to confirm the simulated results.
+                    </p>
+                    <p>
+                        Below is an image of the completed robot mid-test and a snippet of the components functioning:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\FullyAssembled.jpg" alt = "Robot Design" width="460" height="345">
+                    <img src = "C:\Users\tahas\Desktop\images\workingRob.gif" alt = "Motion Robot" width = "500" height = "345">
                 </div>
-                <p>Hellow</p>
-                <p>Hellow</p>
-                <p>Hellow</p>
-                <p>Hellow</p>
-                <p>Hellow</p>
-                <p>Hellow</p>
-                <p>Hellow</p>
-
+                <div class="clickOn"><b>Child Safety Latch</b></div>
+                <div class="showMore" style="display:none;">
+                    <h2></h2>
+                    <img src = "C:\Users\tahas\Desktop\images\ChildLatchDesigns.jpg" alt = "Experimental Designs" width="460" height="500">
+                    <p>For this project, I was tasked with designing and developing a child safety latch with given fatigue 
+                        requirements and a factor of safety that must be met. The image above depicts the sketches of ideas that were produced prior to
+                        the prototyping phase.
+                        From this, I created a design/decision matrix to narrow down the potential options.
+                        Ultimately, due to reduced costs in the molding and production process, the second, more simplisitc, design was chosen with ABS
+                        plastic as the material.
+                    </p>
+                    <p>
+                        Below is an image of the CAD model that was developed.
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\FinalLatchCAD.jpg" alt = "Final Latch CAD" width = "460" height= "345">
+                    <p>
+                        It is to be noted that the CAD model was designed such that the child safety latch
+                        would be screwed into the given cabinet. Every component within this model was also toleranced
+                        within a region where no expected modes of failures, such as failure due to bending, 
+                        shear, or buckling, were expected.
+                    </p>
+                    <p>
+                        In the image below, the results of my calculations are posted. Ultimately, all given criterion were successfully met.
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\FinalCalculations.jpg" alt = "Calculations" width = "650" height= "345">
+                </div>
+                <div class="clickOn"><b>Clock Gearbox</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I was tasked with designing a gearbox for a large grandfather clock. As is with similar
+                        projects, I was given specific criterion that I must meet. These criterion ranged from being within a certain company factor 
+                        of safety to ensuring that the gears would not fatigue and fail. For this design, I once again created a design/decision matrix.
+                        In this case, I first calculated sets of gear ratios to ensure that the clock would record time properly. From this, 
+                        I weighed the costs of producing each gear and ultimately settled on a design.
+                    </p>
+                    <p>Once the gear ratios and gears were set, I then began calculating the stresses that would be induced on the shafts,
+                        allowing me to determine safe dimensions for the shafts holding the gears.
+                    </p>
+                    <p>The overall design is shown in the below image:</p>
+                    <img src = "C:\Users\tahas\Desktop\images\DimensionedCADGearBox.jpg" alt = "Gearbox" width = "750" height = "500">
+                    <p>
+                        When determining modes of failure, I focused on failure due to bending, buckling, shear, and fatigue in all components.
+                        Infinite life was assumed due to the given facto of safety.
+                    </p>
+                    <p>
+                        Ultimately, each design was toleranced in a way that the factor of safety was met and 
+                    no modes of failures occurred.
+                </p>
+                    <p>
+                        An example of how I designed one of my gears is shown in the below image:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\DimensionedGear.jpg" alt = "Gear" width = "750" height = "500">
+                    <p> 
+                        An example of how I designed the shafts is shown in the below image:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\DimensionedShafts.jpg" alt = "Shaft" width = "750" height = "500">
+                </div>
+                <div class="clickOn"><b>Hydrofoil Strut</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        In the given project, I was tasked with designing a strut for a hydrofoil that would offer the least amount of 
+                        drag as it is pulled through water. Specifications were given that had to be met once again.
+                    </p>
+                    <p>
+                        To begin with, I brainstormed and began sketching the different designs that I had for the given strut.
+                        I then weighed each option in a design/decision matrix to determine which design to utilize.
+                        Ultimately, I decided to use the circular strut due to its lower production cost and superior resistance to drag.
+                    </p>
+                    <p>
+                        The sketches created are shown below:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\strutDesigns.jpg" alt = "Theory Struts" width = "460" height = "360">
+                    <p>
+                        I then compiled numerous calculations in order to determine the most optimum dimensions for the strut.
+                        Once completed, a CAD model was generated.
+                    </p>
+                    <p>
+                        Below is the technical drawing of the CAD developed:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\dimensionedStrut.jpg" alt = "dim str" width = "750" height = "430">
+                </div>
+                <div class="clickOn"><b>Pogo Stick</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I was tasked with designing a pogo stick with given fatigue criterion.
+                        To begin with, I began weighing the benefits and flaws of a single spring, double spring, and triple spring
+                        design. After developing a design/decision matrix, I determined that a double spring design would be best.
+                        This is due to the reduction of force needed to bounce a given height and falling within a certain weight range
+                        to acheive favorable results.
+                    </p>
+                    <p>
+                        The final design of the pogo stick is depicted in the image below:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\PopOutPogo.jpg" alt = "dim str" width = "500" height = "650">
+                    <p>Once the design was determined, I then ran calculations through matlab to determine the best
+                        materials and dimensions to use for the both the frame of the pogo stick and the springs. In this case,
+                        chrome-vanadium was chosen due to its resistive properties and light weight. Once determined, all components
+                        were toleranced within a certain range to ensure a required factor of safety of 1.5.
+                    </p>
+                    <p>
+                        An image of the dimensioned pogo stick is shown below as well as the dimensioned spring:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\dimensionedPogo.jpg" alt = "dim str" width = "500" height = "650">
+                    <img src = "C:\Users\tahas\Desktop\images\springModel.jpg" alt = "dim str" width = "500" height = "650">
+                </div>
+                <div class="clickOn"><b>Rocket Nose Cone Aerodynamics</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, me and a team of students wanted to investigate the behaviors of rocket noeses in a wind tunnel 
+                        in our fluid mechanics lab. After discussing our curiosities with the professor, we were given permission to carry 
+                        out this experiment. In order to do this, I first developed 3 separate CAD models for 3 different types of rocket noses.
+                        I decided to test the difference between a bulbous, sharp, and streamlined nose design.
+                    </p>
+                    <p>
+                        Once designed, I then 3D printed the different rocket heads. From here we were then able to test the different 
+                        heads in the wind tunnel.
+                    </p>
+                    <p>
+                        The fully printed models are shown below:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\cones.jpg" alt = "cones rocket">
+                </div>
+                <div class="clickOn"><b>Developing Models from Detailed Drawings</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        This category is to showcase the designs that I was able to CAD in our given CAD course. In this course,
+                        we were given dimensioned diagrams of numerous parts and were tasked with developing them in 
+                        AutoDesk Inventor CAD. The following are some examples of the given models I was able to create.
+                    </p>
+                    <p>
+                        Hair Dryer:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\hairdryer.jpg" alt = "dry" width = "750" height = "430">
+                    <p>
+                        Mixed Part:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\4BDesign.jpg" alt = "4B" width = "750" height = "430">
+                    <p>Sectioned Part:</p>
+                    <img src = "C:\Users\tahas\Desktop\images\section.jpg" alt = "sect" width = "750" height = "430">
+                    <p>
+                        Oblique Planar Surface:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\oblique.jpg" alt = "obl" width = "750" height = "430">
+                    <p>
+                        Revolution Part:
+                    </p>
+                    <img src = "C:\Users\tahas\Desktop\images\popper.jpg" alt = "pop" width = "750" height = "430">
+                </div>
             </section>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
             <section id="Coding">
                 <h2 class="header2">Coding Projects and Simulations<h2>
             </section>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
             <section id="Mechatronics">
                 <h2 class="header2">Mechatronic Projects<h2>
             </section>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
-            <p>Hellow</p>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+        var acc = document.getElementsByClassName("clickOn");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+            });
+        }
+        </script>
         <script>
             $(window).on("scroll", function() {
             var currentPos = $(window).scrollTop();
