@@ -177,6 +177,7 @@
             }
             #Mechatronics{
                 text-align: center;
+                height : 100%;
             }
             #About-Me{
                 margin:0;
@@ -414,10 +415,213 @@
                 </div>
             </section>
             <section id="Coding">
-                <h2 class="header2">Coding Projects and Simulations<h2>
+                <h2 class="header2">Coding Projects</h2>
+                <div class="clickOn"><b>Dementia Probabilities Using Naive Bayes: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        In this project, I investigated the relationship between left and right hippocampus volumes in individuals 
+                        being tested for dementia. The goal of this was to use a training data set to then utilize Naive Bayes Theorem
+                        to predict whether a patient would develop dementia based on the volumes of their hippocampus.
+                    </p>
+                    <p>The dataset was acquired from the given site: http://www.oasis-brains.org/.</p>
+                    <p>
+                        Using the dataset above, I acquired a training and a testing set so that I would be able
+                        to determine the overall accuracy of my algorithm. I then determined the 
+                        four different scenarios that could occur from the dataset provided, these scenarios being 
+                        the likelihood that it is the left hippocampus volume given the patient is healthy or has dementia 
+                        and the likelihood that it is the right hippocampus volume given the patient
+                        is healthy or has dementia. From here, I then calculated the gaussian
+                        probability density function for each scenario. I then calculated the probability that the patient
+                        in the test data set has dementia utilizing the training set and the Naive Bayes equation.
+                    </p>
+                    <p>
+                        The overall accuracy of my written algorithm was <b>72.6%</b>, meaning that given a dataset where 
+                        it is unknown whether the individual has dementia or healthy given their left and right hippocampus
+                        volumes, my program would be able to identify who developed dementia 72.6% of the time.
+                    </p>
+                    <p>
+                        Below is a screenshot of the calculations done within python:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/codeBayes.jpg">
+                </div>
+                <div class="clickOn"><b>Determination of Hypertension Using Contingency Tables: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this assignment, I was tasked with determining whether men or women have a higher chance of developing hypertension.
+                        To approach this, given the population data, I decided to write a hypergeometric distribution function and utilize a 
+                        contingency table to determine the different probabilities.
+                    </p>
+                    <p>
+                        To begin with, I began by developing a null hypothesis, that both men and women have the same probability of developing hypertension.
+                        Utilizing pandas, seaborn, and numpy, I was then able to determine a p-value to compare to a significance value of .05.
+                    </p>
+                    <p>
+                        The results depicted a p-value of <b>.024</b>. Because this was less than the significance value of 0.05, I 
+                        rejected the null hypothesis and determined that men and women do not share the same chance of developing hypertension in that
+                        women actually have a greater chance of developing hypertension.
+                    </p>
+                    <p>
+                        Below are snippets of the code that led to this conclusion:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/contingencyTable.jpg">
+                    <p></p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/rejectHypoth.jpg">
+
+                </div>
+                <div class="clickOn"><b>Life Expectancy Multi Linear Regression Model: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project I investigated the relationship between BMI, the years the data was taken over, and whether the given country analyzed was 
+                        developing or developed to the country's average life expectancy. In order to do this, I used a multi-linear regression model in order to determine 
+                        lines of best fit.
+
+                        This was programmed utilizing packages such as pandas, numpy, and seaborn.
+                    </p>
+                    <p>
+                        Below is an image of the generated model of the data:
+                    </p>
+                    <p>
+                        Note: 0 indicates a developing country while 1 indicates a developed country
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/lifeExpect.jpg">
+                </div>
+                <div class="clickOn"><b>Hand Manipulation: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I utilized principle component analysis (PCA) in order to plot a given set of data points that make up a hand and 
+                        manipulate the points through linear algebra in order to change the overall hand shape.
+                    </p>
+                    <p>
+                        In order to do this, I first began by computing the covariance matrix of the given hand.
+                        Once this was done, I computed the PCA eigenanalysis and plotted the principal components in order to analyze the changes made.
+                    </p>
+                    <p>
+                        Below is an example image of one of the principle components plotted:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/hadns.jpg">
+                    <p>
+                        As it can be seen in the image, the hand seems to spread its fingers as the factor being applied to it increases.
+                    </p>
+                    <p>
+                        The final part that I wanted to investigate was how well the hand could be projected over the original data using
+                        a weighted vector.
+                    </p>
+                    <p>
+                        Below is an image of the code and graph produced:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/weightedHand.jpg">
+                    <p>
+                        It can be seen that the projected hand seemed to fit the original hand fairly accurately.
+                    </p>
+                </div>
+                <div class="clickOn"><b>Frogs V.S. Planes: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I wrote an algorithm that would be able to identify the difference between frogs and planes.
+                        In order to do this, I read in thousands of images of frogs and planes and mapped the images to matrices.
+                        From there, I wrote a logistic regression model algorithm utilizing gradient ascent and log-likelihood maximization to be able to 
+                        predict whether the image being read is a frog or an plane.
+                    </p>
+                    <p>
+                        After running the model numerous times, my algorithms accuracy came out to be <b>89.4%</b>, meaning that given a random set of images of planes
+                        and frogs, the program would be able to correctly identify each image 89.4% of the time.
+                    </p>
+                    <p>
+                        Below is an example of some of the images that my program correctly identified:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/plane.jpg">
+
+                </div>
+                <div class="clickOn"><b>Data Structure Testing: Java/Selenium</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        In this project, I tasked myself with developing a set of tests in order to test the functions of a data structure modeling
+                        webiste. In order to do this, I used gecko-driver, selenium, and JUnit testing.
+                    </p>
+                    <p>
+                        The model I chose for testing was bace choice coverage (BCC) as it allowed the most in-depth testing as it tested
+                        nearly every case.
+                    </p>
+                    <p>
+                        The website tested was https://visualgo.net/en/list?slide=1
+                    </p>
+                    <p>
+                        An image of the successful tests running is shown below:
+                    </p>
+                    <img src =  "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/softwareTest.jpg">
+                </div>
+                <div class="clickOn"><b>Asteroid Wars Multiplayer Video Game: Python</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project I created a video game using pygame. The game is a 2 player versus game, where both space ships have to shoot down 
+                        asteroids to accumulate points. The ships can also attack each other, if hit by projectiles or asteroids, the player will lose health and
+                        points. There are also powerups that will randomly spawn throughout the match and the game ends once time runs out or 
+                        one player loses all of their health.
+                    </p>
+                    <p>
+                        Below is a gif of some of the gameplay:
+                    </p>
+                    <img src ="https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/VideoGameGifPy.gif">
+                </div>
+                <div class="clickOn"><b>Website: HTML/CSS/JavaScript</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        This website/portfolio is a project that I have just begun working on as well!
+                        I decided to learn HTML, CSS, and more JavaScript React in order to develop a fluid portfolio.
+                    </p>
+                    <p>
+                        Although a little rough around the edges, I hope to continue updating this site and make it more user friendly.
+                    </p>
+                </div>
             </section>
             <section id="Mechatronics">
-                <h2 class="header2">Mechatronic Projects<h2>
+                <h2 class="header2">Mechatronic Projects</h2>
+                <div class="clickOn"><b>Car Window Mechanism Model</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I wanted to simulate the opening and closing mechanism of a car window.
+                        I set it so that the simulated car window would open until it reaches a minimum point and close until it reaches its maximum point.
+                        In order to simulate the minimum and maximum points, I utilized IR Distance sensors. To change the direction of the motor,
+                        I utilized a 4 relay system modeling an H-bridge circuit. Once this was done, I wanted to implement a pinch mechanism, so that
+                        in the case a finger or a hand gets stuck when the window was closing, then the window would stop and then begin to open once again.
+                        To simulate this portion, I used a power resistor and an opamp as a comparator and lightly grabbed the motor to cause a spike in current.
+                    </p>
+                    <p>
+                        Please note that all of the programming was done utilizing the propeller 2 microcontroller and the SPIN2 language.
+                    </p>
+                    <p>
+                        Below is a gif of the demo:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/CarWindowSim.gif">
+                </div>
+                <div class="clickOn"><b>Video Game Using Multi-Processor Programming</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I was tasked with creating a video game utilizing a given microcontroller.
+                        In order to do this, I wired a gamepad using the propeller 2 microcontroller and programmed the game in SPIN2.
+                        To activate multi-processes, I activated different cogs on the microcontroller. Doing so allowed the game to run 
+                        fairly smooth, without slowing down.
+                    </p>
+                    <p>
+                        The game itself has numerous components, such as dynamic enemies, dynamic backgrounds, and constantly moving projectiles. I also decided to add
+                        animations and power-ups into the game as well.
+                    </p>
+                    <p>
+                        Below is a gif of the functioning game:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/vgProj.gif">
+                </div>
+                <div class="clickOn"><b>Sewing Machine CAM Replacement</b></div>
+                <div class="showMore" style="display:none;">
+                    <P>
+                        For this project, I investigated the replacement of CAMs in an antique sewing machine with a stepper motor.
+                        Through this I was able to determine a certain step size for the bipolar stepper motor that acheived the same results as the 
+                        CAM.
+                    </P>
+                    <p>
+                        The reasoning behind this was to see if mechanical components could be automated and programmed, allowing for less maintenance to be done.
+                    </p>
+                </div>
             </section>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -458,5 +662,3 @@
         });
         </script>
     </body>
-
-          
