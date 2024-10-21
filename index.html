@@ -16,7 +16,8 @@
                 width:100%;
                 height:100%;
                 margin:0;
-                padding:0;
+                padding-bottom: 200;
+               
                 scrollbar-width: none;
             }
             body::-webkit-scrollbar{
@@ -214,10 +215,18 @@
                     <h1 class="header1">    Taha Iqbal Shamsie    </h1>
                 </div>
                     <div class="aboutMe">
-                        <p>My name is Taha Shamsie and I am currently a fourth year Mechanical Engineering major at the University of Virginia. 
-                        I specialize in mechatronic systems and am intrigued with the intersection
-                        between Mechanical Engineering, Electrical and Computer Engineering, and Computer Science. Within this portfolio,
-                        I hope to showcase and display the numerous projects that I have taken on over the years.
+                        <p>
+                          ______________________                        
+                        </p>
+                        <p>
+                            My name is Taha Shamsie, and I have a deep-rooted passion for STEM and the creative process of innovation. 
+                            My experiences at the University of Virginia and my subsequent role at Boeing have further fueled my interest in developing cutting-edge inventions 
+                            while continually learning and growing. Currently, I specialize in mechatronic systems, exploring the dynamic intersection of Mechanical Engineering, 
+                            Electrical and Computer Engineering, and Computer Science.
+                        </p>
+                        <p>
+                            I am committed to leveraging my industry knowledge to prioritize stability, manufacturability, and safety in every engineering project I undertake. 
+                            In this portfolio, I aim to showcase the diverse array of projects I've engaged in over the years, reflecting my dedication to excellence and innovation in engineering.
                         </p>
                     </div>
                 </div>
@@ -576,6 +585,116 @@
             </section>
             <section id="Mechatronics">
                 <h2 class="header2">Mechatronic Projects</h2>
+                <div class="clickOn"><b>RexBo: Robotic Quadraped</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        After seeing the SPOT robot by Boston Dynamics, I knew I had to try and engineer my own quadruped robot! The general idea for this project was for me to
+                        make a DIY quadruped with features that I would like to see with it. To begin with I want RexBo to be able to have obstacle avoidance and also facial recognition.
+                        The idea with this is to have RexBo trot around my apartment and use facial recogition with cameras/optical sensors to determine if it should wave, or "insult".
+                        I also want it to be able to traverse over complex terrains, from slipper and sloped surfaces to jagged uneven surfaces. These are all future implementations that 
+                        I am going to be working and prototyping on in the near future. There are a lot of considerations that have to be taken into account when designing this, from the weight
+                        of RexBo and the strength of the motors, to the thermal implications that the electronic systems have on the materials used.
+                    </p>
+                    <p>
+                        I am currently at the point where I have the basic design of RexBo V1 down. RexBo is able to stand and dance using a RaspberryPi. I also simulated the robot and its 
+                        inverse kinematic model in pyBullet using python to begin with. This was all hand derived and calcuated then transferred into code. The current plan is to
+                        get the rough working form of RexBo using python and the RaspberryPi, then fine tune the code by transferring it to C++ for more precise memory allocation,
+                        increasing efficiency and decreasing latency as it runs continuously.
+                    </p>
+                </div>
+                <div class="clickOn"><b>Electroenchephalogram Controlled Robotic Exoskeleton</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For my senior capstone project, I decided to focus on developing an electroenchephologram (EEG) controlled rehabilitative robotic exoskeleton. This project was meant
+                        to aid patients with little to no muscle activation in their arms to start training their brain and muscles to rehabilitate and restore muscle activation.
+                        An EEG is a "helmet" device wired with electrodes that connect to the users head. This machine is then able to read in brain activity and output it as noisy voltage
+                        signals. Knowing this, I was able to pair this device with a machine learning algorithm and a pneumatic controlled exoskeleton to classify brain signals as three movements, "left", 
+                        "right", and "stationary" in real-time. This means that if a patient is thinking of moving the noted arm to the right, left, or leaving it stationary, then the
+                        machine learning classifier algorithm will allow for the data to be read and separated into those sections, allowing for the exoskeleton to actuate to the left, right, or be held
+                        stationary automatically.
+                    </p>
+                    <p>
+                        For the design of this exoskeleton, I opted to use a light weight design that is rated to hold the weight of an arm and is also able to have rollers installed on the base
+                        so that the device can roll given an actuation method. The actuation method in this case was using pneumatics. This was due to the resources that I was given, if possible, I would
+                        prefer to have used an electric motor with low audio outputs as any little change/distraction in the individuals environment could cause drastically different signals,
+                        making it difficult to classify a given movement in a machine learning model. This will be touched on later. The pneumatic was controlled using an air pump source and an 
+                        Arduino Nano while the real-time classification was done using a RaspberryPi.
+                    </p>
+                    <p>
+                        Below are images of the design, assembly, and circuit diagram of the system:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/capstoneDesign.png" alt = "capstone design" width="600" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/capstoneBuilt.png" alt = "assembly" width="600" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/eegCircuit.png" alt = "circuit" width="600" height="345">
+                    <p>
+                        In order to classify movements from the noisy signals, I utilized a CNN algorithm with preprocessing filters and numerous layers being applied to the data.
+                        The two major preprocessing filters used in this case were the Sobel Kernel and the Gaussian Kernel. Sobel Kernel allowed for edge detection in the EEG data whereas
+                        the Gaussian kernel normalizes the data. The layers utilized were a Linear Sequential Model, Conv2D Layers, Batch Normalization Layers, Max Pooling Layers,
+                        Dropout Layers, Flatten Layers, and Dense Layers. For the activation function, due to its efficiency, we utilized the LeakyReLU function. 
+                        All of these aspects of the code utilized in conjunction allowed for feature extraction and classification. After gathering a training set of over 100,000 data points (all from my own head)
+                        I was able to create a training and test set for classifier weight calculations. Given these weights, we can then use these weights during real-time EEG readings to classify the movements
+                        as the data is being collected.
+                    </p>
+                    <p>
+                        Below is a GIF of the EEG working and the output on the RaspberryPi:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/eegGiffy.gif" alt = "capstone design" width="600" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/raspberrypiScreenCap.png" alt = "assembly" width="600" height="345">
+                    <p>
+                        Overall, I was able to beat a random classification. Given that there were three possible movements, then purely random would be
+                        about 33%. However, my algorithm achieved an accuracy of 43%.
+                    </p>
+                </div>
+                <div class="clickOn"><b>Self-Made Electric Guitar and Custom Guitar Pedals</b></div>
+                <div class="showMore" style="display:none;">
+                    <p>
+                        For this project, I collaborated with a team of 5 engineers to develop an electric guitar and two pedals to pair.
+                        In this project, I assisted with the initial idea and design of this guitar using SolidWorks.
+                        Although I assisted in the design development, I was primarily focused on the circuit conceptualization and building of the two pedals.
+                    </p>
+                    <p>
+                       Once the general concept was created, I spearheaded the design choice of having movable wings on the guitar that, when moved, affected
+                       the overall volume and tone of guitar. Given time restraints, this was not successfully achieved, however we were able to prototype
+                       the movable wing properly. This was done by setting up two interlocked gears at the base of each wing and connecting them within a hollow housing
+                       unit on the back of the guitar. This allowed the gears to be hidden from sight, while allowing for smooth movements of the wings.  
+                    </p>
+                    <p>
+                        Below are images of the design and final product of the guitar:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/guitar.jpeg" alt = "Guitar" width="300" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/guitarprototype.png" alt = "GuitarCAD" width="500" height="345">
+                    <p>
+                        For the pedals, I decided to develop one known pedal and one custom pedal to suit the needs that my team and I determined.
+                        To begin with, I modeled and built an overdrive pedal on NI Multisim and a breadboard. The design is fairly simple, with 2 major 
+                        components; the op-amp and the diodes. The op-amp in this case was wired in a non-inverting amplifier configuration which allowed for 
+                        the maximization of gain to be possible. The diodes in this case were set-up to create clipping within the signal, allowing for the peaks of the
+                        signals to be flattened. By using two diodes in this configuration, it causes soft-clipping due to the fact that it is in the feedback loop of 
+                        the op-amp. This means that the peaks of the signals are partially clipped, allowing for distortion to be present within the output.
+                    </p>
+                    <p>
+                        Below are images of the overdrive circuit model, breadboard, and output waveform:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/overdrive.png" alt = "overdrive circuit" width="600" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/graphOverdrive.png" alt = "waveform of overdrive" width="400" height="345">
+                    <p>
+                        The custom pedal was aimed to mimic the sound of an engine starting in the beginning of the note being played to match the theme of the 
+                        F-14 Tomcat. This could be done by maximizing the gain, as was done in the overdrive pedal, while hard clipping the top of the waveform.
+                        With this in mind, I was able to begin developing the circuit. For the first portion of the circuit, I had set up another op-amp in the non-inverting
+                        amplifier configuration, but this time I added a capacitor to the feedback loop of the amplifier. This essentially acts as a low pass filter,
+                        limiting higher frequencies while allowing lower frequencies to pass through. This reduces noise in the system. In addition, I implemented a
+                        diode at the output of the op-amp causing hard clipping. This essentially takes the peak signal and flattens it. The final component was another
+                        op-amp in the inverted configuration with a PNP transistor at the output of the circuit. This increased the overall current output 
+                        and gradually decreased the voltage output. This circuit led to a popping/revving sound at the beginning of the note, while tapering off
+                        into distortion as the signal continued. 
+
+                    </p>
+                    <p>
+                        Below are images of the custom circuit model, breadboard, and output waveform:
+                    </p>
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/customcircuit.png" alt = "custom circuit" width="300" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/customdiagram.png" alt = "diagram of custom" width="500" height="345">
+                    <img src = "https://raw.githubusercontent.com/Tiskk/TIShamsWeb/main/images/customwave.png" alt = "waveform of custom" width="400" height="345">
+                </div>
                 <div class="clickOn"><b>Car Window Mechanism Model</b></div>
                 <div class="showMore" style="display:none;">
                     <p>
